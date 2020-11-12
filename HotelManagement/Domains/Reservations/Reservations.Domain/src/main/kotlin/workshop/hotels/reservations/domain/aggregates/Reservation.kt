@@ -25,10 +25,10 @@ class Reservation : AggregateBase<Reservation.State>(State())
     }
 
     fun makeReservation(command: MakeReservation): Array<IEvent> {
-        if((command.roomTypeAvailableAmount-1) <= 0) {
-            raiseEvent(ReservationNotMade(command.id, command.hotelId, command.roomType, "Room Type Unavailable"))
-        }else {
+        if(command.roomTypeAvailableAmount > 0) {
             raiseEvent(ReservationMade(command.id, command.hotelId, command.roomType))
+        }else {
+            raiseEvent(ReservationNotMade(command.id, command.hotelId, command.roomType, "Room Type Unavailable"))
         }
         return unCommitedEvents.toTypedArray()
     }

@@ -1,0 +1,72 @@
+{
+	"info": {
+		"_postman_id": "9b8aec2c-d9e3-4733-a696-2f8a31031c73",
+		"name": "Presentation",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:7071/api/reservation/make",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{id:\"7feda51d-785f-4a3d-9d0c-09bc41764705\",hotelId:\"83d5c0d5-08e3-447b-935c-c2c9253b7674\",roomType:\"Queen\"}"
+				},
+				"url": {
+					"raw": "http://localhost:7071/api/reservation/make",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7071",
+					"path": [
+						"api",
+						"reservation",
+						"make"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:7071/api/reservation?id=7feda51d-785f-4a3d-9d0c-09bc41764705",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:7071/api/reservation?id=7feda51d-785f-4a3d-9d0c-09bc41764705",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "7071",
+					"path": [
+						"api",
+						"reservation"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "7feda51d-785f-4a3d-9d0c-09bc41764705"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
